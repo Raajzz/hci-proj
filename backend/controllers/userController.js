@@ -26,7 +26,7 @@ const addUser = asyncWrapper(async (req, res, next) => {
 const deleteUser = asyncWrapper ( async (req, res, next) => {
   const { name } = req.params;
   const user = await User.deleteOne({
-    name
+    _id:name
   })
   if (user.deletedCount === 0) {
     return next(
