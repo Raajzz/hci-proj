@@ -39,7 +39,7 @@ const UserSchema = new mongoose.Schema(
         3,
         "Length of the User Name must be at least 3 character long",
       ],
-      unique: true,
+      //unique: true,
     },
     age: {
       type: Number,
