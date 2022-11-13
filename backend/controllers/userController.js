@@ -3,8 +3,8 @@ const asyncWrapper = require("../middleware/asyncWrapper");
 const CustomError = require("../errors/customError")
 
 const getUser = asyncWrapper( async (req, res, next) => {
-  const { name } = req.params;
-  const user = await User.findOne({ username: name }).lean()
+  const { id } = req.params;
+  const user = await User.findOne({ _id: id }).lean()
   if(!user){
     return next(new CustomError("Invalid username provided", 404))
   }
@@ -24,9 +24,9 @@ const addUser = asyncWrapper(async (req, res, next) => {
 })
 
 const deleteUser = asyncWrapper ( async (req, res, next) => {
-  const { name } = req.params;
+  const { id } = req.params;
   const user = await User.deleteOne({
-    _id:name
+    _id:id
   })
   if (user.deletedCount === 0) {
     return next(
@@ -40,10 +40,10 @@ const deleteUser = asyncWrapper ( async (req, res, next) => {
 })
 
 const editUser = asyncWrapper( async (req, res, next) => {
-  const { name } = req.params;
+  const { id } = req.params;
   const user = await User.findOneAndUpdate(
     {
-      username: name,
+      _id: id,
     },
     req.body,
     {
