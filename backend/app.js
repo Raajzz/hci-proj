@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const errorHandlerMiddleWare = require("./middleware/errorHandler");
 const routeNotFound = require("./middleware/routeNotFound");
-const mongooseConnect = require("./config/databaseConnect");
+const mongooseConnect = require("./db/databaseConnect");
 const userRoutes = require("./routes/userRoutes")
 const checkerRoutes = require("./routes/checkerRoutes")
 require("dotenv").config({
