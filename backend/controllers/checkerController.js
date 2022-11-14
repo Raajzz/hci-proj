@@ -32,7 +32,9 @@ const checkUser = asyncWrapper ( async (req, res, next) => {
   })
 });
 
+
 module.exports = {
   getAllUsers,
   checkUser,
+
 };
