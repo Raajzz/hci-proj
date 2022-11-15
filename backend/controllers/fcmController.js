@@ -4,7 +4,7 @@ const asyncWrapper = require("../middleware/asyncWrapper");
 const sendNotification=asyncWrapper(async(req,res,next)=>{
     
     const { msg } = req.body;
-    const registrationToken = 'fvOzc-gaTIiNO9ZnDfcqii:APA91bFI8PIL-NlxAextmutZO-z24OuHngNs8Wx2eGTQ9ka9Py53qA1tVRk34Lft9XAt3Of9mrxf5eLbbNd9xOaSGl2bUedGlOBv4MtEpZOi6gplY26IzWfpS97BYbeb4iNdDpUGwL11';
+    const registrationToken = 'fE7LiysiS5e7Xs4394DjnI:APA91bGVHDEAouLDsnoQ3XWlVJ9v3dzBiCYNL-Qu1l_MgJ8gzc07r21tEL6VXHn7heU5NfeV5VHYeCn5IbwWidbaSK6aaJT1Xf9TSoSjYPb0tdpEs6UWIR5cP1syK-kJM2Cyzab7iXyo';
   
   const message = {
     data: {
